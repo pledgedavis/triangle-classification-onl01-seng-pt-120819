@@ -34,6 +34,7 @@ class Triangle
         if side <= 0
           triangle << false
         end
+        raise TriangleError if triangle.include?
      end
     end
 
