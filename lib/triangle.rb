@@ -35,7 +35,7 @@ class Triangle
     #       triangle << false
     #     end
     #     raise TriangleError if triangle.include?(false)
-    #  end
+      end
     end
 
     class TriangleError < StandardError
