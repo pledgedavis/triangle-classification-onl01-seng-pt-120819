@@ -27,14 +27,14 @@ class Triangle
       #
       # Further, each side must be larger than 0.
 
-  triangle = [(@side_1 + @side_2 > @side_3 )&& (@side_1 + @side_3 > @side_2) && (@side_2 + @side_3 > @side_1)]
+  triangle = [(@side_1 + @side_2 > @side_3 ) && (@side_1 + @side_3 > @side_2) && (@side_2 + @side_3 > @side_1)]
     # if @side_1 <= 0  || @side_2 <= 0 || @side_3 <= 0
     #     raise TriangleError
       [@side_1, @side_2, @side_3].each do |side|
         if side <= 0
           triangle << false
         end
-        raise TriangleError if triangle.include?
+        raise TriangleError if triangle.include?(false)
      end
     end
 
