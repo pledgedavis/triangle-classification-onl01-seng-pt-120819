@@ -1,3 +1,50 @@
 class Triangle
-  # write code here
+
+    attr_accessor :side_1, :side_2, :side_3
+
+    def initialize(side_1, side_2, side_3)
+        @side_1 = side_1
+        @side_2 = side_2
+        @side_3 = side_3
+
+    end
+
+    def kind
+      if @side_1 == @side_2 && @side_1 == @side_3
+          return :equilateral
+      elsif @side_1 == @side_2 || @side_1 == @side_3 || @side_2 == @side_3
+          return :isosceles
+      else
+          return :scalene
+
+      end
+    end
+
+    def validate_triangle
+      # The sum of the lengths of any two sides of a triangle always exceeds the length
+      # of the third side. This is a principle known as the _triangle inequality_.
+      #
+      # Further, each side must be larger than 0.
+    @side_1 + @side_2 > @side_3 > 0 && @side_1 + @side_3 > @side_2 > 0 && @side_2 + @side_3 > @side_1 > 0
+    end
+
+    class TriangleError < StandardError
+
+
+    end
+
 end
+
+
+# def get_married(person)
+#     self.partner = person
+#     if person.class != Person
+#       begin
+#         raise PartnerError
+#       rescue PartnerError => error
+#           puts error.message
+#       end
+#     else
+#       person.partner = self
+#     end
+# end
